@@ -16,9 +16,12 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.premiere %></td>
+        
         <td><%= link_to 'Show', book %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Remove', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   <%= will_paginate @tutorials %>
